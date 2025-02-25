@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Process Donations</title>
+  <link rel="stylesheet" href="process.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Process Unprocessed Donations</h1>
+
+    <!-- Section to Select Donation -->
+    <section id="processSection">
+      <label for="donorSelect">Select a donation to process:</label>
+      <select id="donorSelect" aria-label="Select a donation"></select>
+      <button id="processButton">Process Selected Donation</button>
+    </section>
+
+    <!-- Hidden Processing Form -->
+    <section id="processingForm" style="display: none;">
+      <h2>Processing Donation</h2>
+      <form>
+        <fieldset>
+          <legend>Donation Details</legend>
+          
+<label for="donationDate">Donation Date:</label>
+<input type="date" id="donationDate" required><br><br>
+
+<label for="hospital">Hospital:</label>
+<select id="hospital" name="hospital" required>
+  <option value="" disabled selected>Select a hospital</option>
+  
+  <!-- Hospitals in Cameroon -->
+  <optgroup label="Cameroon Hospitals">
+    <option value="HGOPY">HGOPY</option>
+    <option value="HCY">HCY</option>
+    <option value="HGY">HGY</option>
+    <option value="CHRACERH">CHRACERH</option>
+    <option value="Hop Caisse">Hop Caisse</option>
+    <option value="Hop Biyem Assi">Hop Biyem Assi</option>
+    <option value="LAQUINTINIE">LAQUINTINIE</option>
+    <option value="Hop Gem Douala">Hop Gem Douala</option>
+    <option value="HGOPED">HGOPED</option>
+    <option value="Notre Dame">Notre Dame</option>
+  </optgroup>
+  
+  <!-- Hospitals in Kenya -->
+  <optgroup label="Kenya Hospitals">
+    <option value="Nairobi Hospital">Nairobi Hospital</option>
+    <option value="City Hospital">City Hospital</option>
+    <option value="Royal Hospital">Royal Hospital</option>
+    <option value="General Hospital">General Hospital</option>
+    <option value="Mombasa Hospital">Mombasa Hospital</option>
+    <option value="Coast Hospital">Coast Hospital</option>
+    <option value="Beachside Hospital">Beachside Hospital</option>
+    <option value="Seaside Hospital">Seaside Hospital</option>
+    <option value="Kisumu Hospital">Kisumu Hospital</option>
+    <option value="Lakeview Hospital">Lakeview Hospital</option>
+    <option value="Western Hospital">Western Hospital</option>
+    <option value="Sunrise Hospital">Sunrise Hospital</option>
+    <option value="Nakuru Hospital">Nakuru Hospital</option>
+    <option value="Rift Valley Hospital">Rift Valley Hospital</option>
+    <option value="Central Hospital">Central Hospital</option>
+    <option value="Premier Hospital">Premier Hospital</option>
+    <option value="Eldoret Hospital">Eldoret Hospital</option>
+    <option value="Referral Hospital">Referral Hospital</option>
+    <option value="County Hospital">County Hospital</option>
+    <option value="Medical Center">Medical Center</option>
+    <option value="Machakos Hospital">Machakos Hospital</option>
+    <option value="Eastern Hospital">Eastern Hospital</option>
+    <option value="Valley Hospital">Valley Hospital</option>
+    <option value="Central Hospital">Central Hospital</option>
+    <option value="Meru Hospital">Meru Hospital</option>
+    <option value="Highland Hospital">Highland Hospital</option>
+    <option value="Regional Hospital">Regional Hospital</option>
+    <option value="City Hospital">City Hospital</option>
+    <option value="Nyeri Hospital">Nyeri Hospital</option>
+    <option value="Central Hospital">Central Hospital</option>
+    <option value="Highland Hospital">Highland Hospital</option>
+    <option value="County Hospital">County Hospital</option>
+    <option value="Thika Hospital">Thika Hospital</option>
+    <option value="East Hospital">East Hospital</option>
+    <option value="Royal Hospital">Royal Hospital</option>
+    <option value="General Hospital">General Hospital</option>
+    <option value="Kitale Hospital">Kitale Hospital</option>
+    <option value="County Hospital">County Hospital</option>
+    <option value="Regional Hospital">Regional Hospital</option>
+    <option value="City Hospital">City Hospital</option>
+  </optgroup>
+</select><br><br>
+
+          <label for="donationType">Donation Type:</label>
+          <select id="donationType" required>
+            <option value="">Select Donation Type</option>
+            <option value="Whole Blood">Whole Blood</option>
+            <option value="Red Blood Cells">Red Blood Cells</option>
+            <option value="Platelets">Platelets</option>
+            <option value="Plasma">Plasma</option>
+            <option value="Cryoprecipitate">Cryoprecipitate</option>
+            <option value="Granulocytes">Granulocytes</option>
+          </select>
+
+          <label for="componentType">Blood Component Type:</label>
+          <select id="componentType" required>
+            <option value="">Select Component Type</option>
+            <option value="Red Blood Cells">Red Blood Cells</option>
+            <option value="Whole Blood">Whole Blood</option>
+            <option value="Platelets">Platelets</option>
+            <option value="Plasma">Plasma</option>
+            <option value="Cryoprecipitate">Cryoprecipitate</option>
+            <option value="Granulocytes">Granulocytes</option>
+          </select>
+
+          <label for="bloodGroup">Blood Group:</label>
+          <select id="bloodGroup" required>
+            <option value="">Select Blood Group</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+          </select>
+
+          <label for="rhFactor">Rh Factor:</label>
+          <select id="rhFactor" required>
+            <option value="Positive">Positive</option>
+            <option value="Negative">Negative</option>
+          </select>
+
+          <label for="volumeCollected">Volume Collected (mL):</label>
+          <input type="number" id="volumeCollected" required placeholder="e.g., 450">
+
+        </fieldset>
+        
+        <button type="button" id="saveProcessingDetails">Save Processing Details</button>
+      </form>
+    </section>
+
+    <!-- Processed Donations List -->
+    <section id="processedList">
+      <h2>Processed Donations</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Unit Number</th>
+              <th>Donation Date</th>
+           
+              <th>Blood Component</th>
+              <th>Blood Group & Rh</th>
+              <th>Volume (mL)</th>
+                 <th>Hospital </th>
+              <th>Actions</th>
+              <th>Further Processing</th>
+            </tr>
+          </thead>
+          <tbody id="processingTable">
+            <!-- Entries will be dynamically added here -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <script src="zote.js" defer></script>
+  <script src="process.js" defer></script>
+  <script src="zotehe.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grouped Hospitals</title>
+    <link rel="stylesheet" href="outlaw.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2 id="headerText"><i class="fas fa-tint"></i> Summary of Available Blood in the Bank</h2>
+        <div class="main-content">
+            <!-- Filter Section on the Left -->
+            <div class="filter-section">
+                <select id="hospitalSelect" onchange="updateUI()">
+                    <option value="">Select Hospital</option>
+                </select>
+                <select id="regionSelect" onchange="updateUI()">
+                    <option value="">Select Region</option>
+                </select>
+            </div>
+
+            <!-- Chart on the Right -->
+            <div class="chart-section">
+                <canvas id="bloodGroupChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Blood Group Summary Cards -->
+        <div class="grid" id="bloodGroupCards"></div>
+
+        <!-- Grouped Hospitals Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Unit Number</th>
+                    <th>Date Collected</th>
+                    <th>Component</th>
+                    <th>Blood Group</th>
+                    <th>Volume (mL)</th>
+                    <th>Storage Temp</th>
+                    <th>Expiration Date</th>
+                </tr>
+            </thead>
+            <tbody id="groupedTable"></tbody>
+        </table>
+    </div>
+
+    <script src="outlaw.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood Donation Requests</title>
+  <link rel="stylesheet" href="testo.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    <header class="header">
+      <h1 class="header__title"><i class="fa fa-list"></i> Blood Donation Requests</h1>
+      <p class="header__info highlight"><i class="fa fa-info-circle"></i> Below is the list of all blood donation requests.</p>
+    </header>
+
+    <!-- Filters and Export Section -->
+    <div class="controls">
+      <label for="locationFilter">
+        <i class="fa fa-map-marker"></i> Choose your region to view the summary 🔍  
+      </label>
+      <p class="instruction"><i class="fa fa-hand-pointer-o"></i> Tap the dropdown to select your location.</p>
+      
+      <select id="locationFilter">
+        <option value="">All</option>
+      </select>
+
+      <button id="exportCSV" class="btn btn--export">
+        <i class="fa fa-download"></i> Export CSV
+      </button>
+    </div>
+
+    <!-- Table Section -->
+    <div class="table-container">
+      <table class="requests-table" id="requestsTable">
+        <thead>
+          <tr>
+            <th data-column="id">ID</th>
+            <th data-column="bloodType">Blood Type</th>
+            <th data-column="units">Units</th>
+            <th data-column="gender">Gender</th>
+            <th data-column="hospital">Hospital</th>
+            <th data-column="doctor">Doctor</th>
+            <th data-column="contactHospital">Contact</th>
+            <th data-column="location">Location</th>
+          </tr>
+        </thead>
+        <tbody id="requestsBody">
+          <!-- Data will be inserted dynamically -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="luck.js"></script>
+</body>
+</html>

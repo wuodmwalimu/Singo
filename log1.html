@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pamoja Dokita&reg; - Signup</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="log1.css"> <!-- External CSS -->
+</head>
+<body>
+  <div class="container">
+    <!-- Signup Form Section -->
+    <div class="form-container">
+      <!-- Signup Form -->
+      <form id="signupForm" class="auth-form">
+        <h2><i class="fas fa-user-plus"></i> Signup</h2>
+        <div class="form-group">
+          <label for="signupPrefix"><i class="fas fa-id-badge"></i> Prefix:</label>
+          <select id="signupPrefix" required>
+            <option value="Dr">Dr</option>
+            <option value="Mr">Mr</option>
+            <option value="Ms">Ms</option>
+            <option value="Mrs">Mrs</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="signupFirstName"><i class="fas fa-user"></i> First Name:</label>
+          <input type="text" id="signupFirstName" required>
+        </div>
+        <div class="form-group">
+          <label for="signupLastName"><i class="fas fa-user"></i> Last Name:</label>
+          <input type="text" id="signupLastName" required>
+        </div>
+        <div class="form-group">
+          <label for="signupEmail"><i class="fas fa-envelope"></i> Email:</label>
+          <input type="email" id="signupEmail" required readonly>
+        </div>
+        <div class="form-group">
+          <label for="signupCountry"><i class="fas fa-globe"></i> Country:</label>
+          <select id="signupCountry" required>
+            <option value="">Select Country</option>
+            <option value="Kenya">Kenya</option>
+            <option value="Cameroon">Cameroon</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="signupRegion"><i class="fas fa-map-marker-alt"></i> Region:</label>
+          <select id="signupRegion" required disabled>
+            <option value="">Select Region</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="signupHospital"><i class="fas fa-hospital"></i> Hospital:</label>
+          <select id="signupHospital" required disabled>
+            <option value="">Select Hospital</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="signupRole"><i class="fas fa-briefcase"></i> Role:</label>
+          <select id="signupRole" required>
+            <option value="Receptionist">Receptionist</option>
+            <option value="Nurse">Nurse</option>
+            <option value="Blood Bank Technician">Blood Bank Technician</option>
+            <option value="Lab Manager (Doctor)">Lab Manager (Doctor)</option>
+            <option value="Cashier">Cashier</option>
+            <option value="Admin">Admin</option>
+              <option value="RegionalManager">Regional Manager</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="signupPassword"><i class="fas fa-lock"></i> Password:</label>
+          <input type="password" id="signupPassword" required>
+        </div>
+        <button type="submit"><i class="fas fa-user-plus"></i> Signup</button>
+      </form>
+    </div>
+
+    <!-- User List Section -->
+    <div class="user-list-container">
+      <h2><i class="fas fa-users"></i> Registered Users</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="userList"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    <p>Developed for <strong>Charles Drew-Dokita</strong></p>
+  </footer>
+
+  <!-- Regions and Hospitals Data -->
+  <script type="application/json" id="regionsData">
+    {
+      "Kenya": ["Nairobi", "Mombasa", "Kisumu", "Nakuru", "Eldoret"],
+      "Cameroon": ["Centre", "Littoral", "East", "North", "West", "South"]
+    }
+  </script>
+
+  <script type="application/json" id="hospitalsData">
+    {
+      "Nairobi": ["Kenyatta National Hospital", "Aga Khan Hospital", "Nairobi Hospital"],
+      "Mombasa": ["Coast General Hospital", "Mombasa Hospital"],
+      "Kisumu": ["Jaramogi Oginga Odinga Hospital", "Aga Khan Kisumu"],
+      "Nakuru": ["Nakuru Level 5 Hospital", "Mediheal Hospital Nakuru"],
+      "Eldoret": ["Moi Teaching & Referral Hospital", "Reale Hospital"],
+      "Centre": ["HGOPY", "HCY", "HGY", "CHRACERH", "HOP Caisse", "HOP Biyem Assi"],
+      "Littoral": ["LAQUINTINIE", "Hop Gem Douala", "HGOPED", "NOTRE DAME"],
+      "East": ["Bertoua Regional Hospital"],
+      "North": ["Garoua Regional Hospital"],
+      "West": ["Bafoussam Regional Hospital"],
+      "South": ["Ebolowa Regional Hospital"]
+    }
+  </script>
+
+  <!-- External JavaScript File -->
+  <script src="log1.js" defer></script>
+</body>
+</html>
