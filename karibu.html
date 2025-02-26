@@ -31,6 +31,39 @@
   <script src="unpro.js" defer></script>
   <script src="another.js" defer></script>
   <script src="behave.js" defer></script>
+  
+  
+  
+  <style>
+    
+    .counts-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.count-card {
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 200px;
+}
+
+.count-card h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.count-card p {
+  margin: 10px 0 0;
+  font-size: 1em;
+}
+    
+    
+    
+  </style>
 </head>
 <body>
 
@@ -101,9 +134,21 @@
     <i class="fas fa-tint"></i> Available Blood in Units
   </h2>
 
-  <section id="blood-cards" class="blood-cards">
+  <section id="countsSection" class="blood-cards">
     <!-- Blood group cards will be dynamically generated here -->
   </section>
+
+
+
+
+  <script src="cardz.js"></script>
+
+
+
+
+
+
+
 
   <!-- Popup for Blood Donation Details -->
   <div id="details-popup" class="hidden">
